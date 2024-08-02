@@ -62,7 +62,7 @@ export default function Navbar() {
           <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
             <Image
               className="relative"
-              src="/Linkedin.svg"
+              src="/linkedin.svg"
               alt="Linkedin Logo"
               width={31}
               height={28}

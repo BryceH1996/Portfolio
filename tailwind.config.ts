@@ -10,6 +10,7 @@ const config: Config = {
     colors: {
       'primary': '#E7CCA2',
       'secondary': '#211C13',
+      'text': '#333333',
       'white': '#ffffff',
     },
     borderRadius: {
@@ -17,7 +18,7 @@ const config: Config = {
     },
     extend:{
       minHeight:{
-        'with-nav': 'calc(70vh - 114px)'
+        'with-nav': 'calc(30vh - 114px)'
       }
     }
   },
