@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex bg-white rounded-b-4xl shadow-md">
           <div className="flex w-full flex-row p-20 xl:p-32 xl:pt-4 xl:pb-0 pt-4 pb-0 bg-primary rounded-b-4xl">
             <div className="flex flex-col w-4/12 xl:w-4/12 2xl:w-3/12 space-y-3 self-center">
-              <h3 className="text-2xl font-bold">Hello, I'm</h3>
+              <h3 className="text-2xl font-bold">Hello, I&apos;m</h3>
               <h1 className="font-bold"><span className="text-5xl mb-3 block white-block relative"><span className="z-10 relative">Bryce Hardie</span></span> <span className="text-2xl space-y-1">a Passionate <br></br>Front-end Developer</span></h1>
               <h2 className="text-sm font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</h2>
               <div>
