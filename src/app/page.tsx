@@ -4,8 +4,10 @@ import CardLayout from "@/components/card-layout/card-layout";
 import PrimaryButton from "../components/button/primary-button";
 import Image from "next/image";
 import { motion } from "framer-motion"
-import Slider from "react-slick";
-import { ComponentProps, MutableRefObject, useEffect, useRef, useState } from "react";
+import { Controller } from 'swiper/modules';
+import { type Swiper as SwiperTypes } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useState } from "react";
 
 export default function Home() {
 
@@ -15,15 +17,8 @@ export default function Home() {
     damping: 9
   }
 
-  const [nav1, setNav1] = useState<Slider | null>(null);
-  const [nav2, setNav2] = useState<Slider | null>(null);
-  let sliderRef1 = useRef<Slider | null>(null);
-  let sliderRef2 = useRef<Slider | null>(null);
-
-  useEffect(() => {
-    setNav1(sliderRef1.current);
-    setNav2(sliderRef2.current);
-  }, []);
+  const [firstSwiper, setFirstSwiper] = useState<SwiperTypes | null>(null);
+  const [secondSwiper, setSecondSwiper] = useState<SwiperTypes | null>(null);
 
   return (
     <main>
@@ -88,16 +83,11 @@ export default function Home() {
       <CardLayout minHeight="min-h-full" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4">
         <div className="container mx-auto flex w-full flex-row xl:pt-6 xl:pb-12 pt-4 pb-8">
           <div className="lg:w-6/12 xl:pr-16 -top-24 relative -mb-24">
-            <Slider arrows={false} asNavFor={nav2} ref={sliderRef1}>
-              <Image
-                  className="relative"
-                  src="a.png"
-                  alt="Portrait photo"
-                  width={0}
-                  height={0}
-                  style={{ width: '100%', height: 'auto' }}
-                  priority
-                />
+            <Swiper 
+              modules={[Controller]}
+              onSwiper={setFirstSwiper}
+              controller={{ control: secondSwiper }}>
+              <SwiperSlide>
                 <Image
                   className="relative"
                   src="a.png"
@@ -107,6 +97,8 @@ export default function Home() {
                   style={{ width: '100%', height: 'auto' }}
                   priority
                 />
+              </SwiperSlide>
+              <SwiperSlide>
                 <Image
                   className="relative"
                   src="a.png"
@@ -116,18 +108,26 @@ export default function Home() {
                   style={{ width: '100%', height: 'auto' }}
                   priority
                 />
-            </Slider>
+              </SwiperSlide>
+            </Swiper>
           </div>
           <div className="lg:w-6/12 xl:pl-16">
           <h2 className="xl:text-4xl text-3xl font-bold text-secondary">Favourite Projects</h2>
-            <Slider
-              asNavFor={nav1}
-              ref={sliderRef2}
-              slidesToShow={1}
-              swipeToSlide={true}
-              focusOnSelect={true}
-              className="mb-4"
-              >
+            <Swiper         
+              modules={[Controller]}
+              onSwiper={setSecondSwiper}
+              controller={{ control: firstSwiper }}>
+              <SwiperSlide>
+                <div className="text-secondary">
+                  <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
+                  <p className="text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
+                    <br /><br />
+                    Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
               <div className="text-secondary">
                 <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
                 <p className="text-sm">
@@ -136,24 +136,9 @@ export default function Home() {
                   Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
                 </p>
               </div>
-              <div className="text-secondary">
-                <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
-                <p className="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
-                  <br /><br />
-                  Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
-                </p>
-              </div>
-              <div className="text-secondary">
-                <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
-                <p className="text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
-                  <br /><br />
-                  Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
-                </p>
-              </div>
-            </Slider>
-            <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
+              </SwiperSlide>
+            </Swiper>
+            <PrimaryButton className="inline-block mt-6" text="View portfolio" url="/portfolio"/>
           </div>
         </div>
       </CardLayout>
