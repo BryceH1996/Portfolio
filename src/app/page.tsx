@@ -4,6 +4,8 @@ import CardLayout from "@/components/card-layout/card-layout";
 import PrimaryButton from "../components/button/primary-button";
 import Image from "next/image";
 import { motion } from "framer-motion"
+import Slider from "react-slick";
+import { RefObject, useEffect, useRef, useState } from "react";
 
 export default function Home() {
 
@@ -12,6 +14,16 @@ export default function Home() {
     stiffness: 60, 
     damping: 9
   }
+
+  const [nav1, setNav1] = useState<RefObject<HTMLDivElement> | null>(null);
+  const [nav2, setNav2] = useState<RefObject<HTMLDivElement> | null>(null);
+  let sliderRef1 = useRef<HTMLDivElement>(null);
+  let sliderRef2 = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setNav1(sliderRef1);
+    setNav2(sliderRef2);
+  }, []);
 
   return (
     <main>
@@ -58,7 +70,7 @@ export default function Home() {
           <div className="mb-4">
             <h2 className="text-text font-bold text-4xl">About Me</h2>
           </div>
-          <div className="flex flex-row xl:gap-36 gap-24">
+          <div className="flex flex-row xl:gap-32 gap-24">
             <div className="text-text w-6/12 text-sm space-y-3">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. </p>
               <p>
@@ -74,27 +86,75 @@ export default function Home() {
         </div>
       </CardLayout>
       <CardLayout minHeight="min-h-full" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4">
-        <div className="container mx-auto flex w-full flex-row xl:pt-8 xl:pb-8 pt-6 pb-6">
-          {/* <Slider>
+        <div className="container mx-auto flex w-full flex-row xl:pt-6 xl:pb-12 pt-4 pb-8">
+          <div className="lg:w-6/12 xl:pr-16 -top-24 relative -mb-24">
+            <Slider arrows={false} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}>
               <Image
-                className="relative"
-                src="/a.png"
-                alt="Portrait photo"
-                width={0}
-                height={0}
-                style={{ width: '100%', height: 'auto', zIndex: 50, top: -75 }}
-                priority
-              />
-              <Image
-                className="relative"
-                src="/a.png"
-                alt="Portrait photo"
-                width={0}
-                height={0}
-                style={{ width: '35%', height: 'auto', zIndex: 50, top: -75 }}
-                priority
-              />
-          </Slider> */}
+                  className="relative"
+                  src="a.png"
+                  alt="Portrait photo"
+                  width={0}
+                  height={0}
+                  style={{ width: '100%', height: 'auto' }}
+                  priority
+                />
+                <Image
+                  className="relative"
+                  src="a.png"
+                  alt="Portrait photo"
+                  width={0}
+                  height={0}
+                  style={{ width: '100%', height: 'auto' }}
+                  priority
+                />
+                <Image
+                  className="relative"
+                  src="a.png"
+                  alt="Portrait photo"
+                  width={0}
+                  height={0}
+                  style={{ width: '100%', height: 'auto' }}
+                  priority
+                />
+            </Slider>
+          </div>
+          <div className="lg:w-6/12 xl:pl-16">
+          <h2 className="xl:text-4xl text-3xl font-bold text-secondary">Favourite Projects</h2>
+            <Slider
+              asNavFor={nav1}
+              ref={slider => (sliderRef2 = slider)}
+              slidesToShow={1}
+              swipeToSlide={true}
+              focusOnSelect={true}
+              className="mb-4"
+              >
+              <div className="text-secondary">
+                <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
+                <p className="text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
+                  <br /><br />
+                  Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
+                </p>
+              </div>
+              <div className="text-secondary">
+                <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
+                <p className="text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
+                  <br /><br />
+                  Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
+                </p>
+              </div>
+              <div className="text-secondary">
+                <h3 className="font-bold text-md mt-4 mb-4">Portfolio Title</h3>
+                <p className="text-sm">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. 
+                  <br /><br />
+                  Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in sem quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
+                </p>
+              </div>
+            </Slider>
+            <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
+          </div>
         </div>
       </CardLayout>
     </main>
