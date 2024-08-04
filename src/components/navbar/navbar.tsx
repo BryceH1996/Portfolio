@@ -4,7 +4,6 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import PrimaryButton from '../button/primary-button'
 import Image from "next/image";
-import linkedinLogo from '../../../public/linkedin.svg'
 import { useState, useEffect } from 'react';
  
 export default function Navbar() {
@@ -63,7 +62,7 @@ export default function Navbar() {
           <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
             <Image
               className="relative"
-              src={linkedinLogo}
+              src="/linkedin.svg"
               alt="Linkedin Logo"
               width={31}
               height={28}
