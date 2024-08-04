@@ -5,7 +5,7 @@ import PrimaryButton from "../components/button/primary-button";
 import Image from "next/image";
 import { motion } from "framer-motion"
 import Slider from "react-slick";
-import { RefObject, useEffect, useRef, useState } from "react";
+import { ComponentProps, MutableRefObject, useEffect, useRef, useState } from "react";
 
 export default function Home() {
 
@@ -15,14 +15,14 @@ export default function Home() {
     damping: 9
   }
 
-  const [nav1, setNav1] = useState<RefObject<HTMLDivElement> | null>(null);
-  const [nav2, setNav2] = useState<RefObject<HTMLDivElement> | null>(null);
-  let sliderRef1 = useRef<HTMLDivElement>(null);
-  let sliderRef2 = useRef<HTMLDivElement>(null);
+  const [nav1, setNav1] = useState<Slider | null>(null);
+  const [nav2, setNav2] = useState<Slider | null>(null);
+  let sliderRef1 = useRef<Slider | null>(null);
+  let sliderRef2 = useRef<Slider | null>(null);
 
   useEffect(() => {
-    setNav1(sliderRef1);
-    setNav2(sliderRef2);
+    setNav1(sliderRef1.current);
+    setNav2(sliderRef2.current);
   }, []);
 
   return (
@@ -88,7 +88,7 @@ export default function Home() {
       <CardLayout minHeight="min-h-full" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4">
         <div className="container mx-auto flex w-full flex-row xl:pt-6 xl:pb-12 pt-4 pb-8">
           <div className="lg:w-6/12 xl:pr-16 -top-24 relative -mb-24">
-            <Slider arrows={false} asNavFor={nav2} ref={slider => (sliderRef1 = slider)}>
+            <Slider arrows={false} asNavFor={nav2} ref={sliderRef1}>
               <Image
                   className="relative"
                   src="a.png"
@@ -122,7 +122,7 @@ export default function Home() {
           <h2 className="xl:text-4xl text-3xl font-bold text-secondary">Favourite Projects</h2>
             <Slider
               asNavFor={nav1}
-              ref={slider => (sliderRef2 = slider)}
+              ref={sliderRef2}
               slidesToShow={1}
               swipeToSlide={true}
               focusOnSelect={true}
