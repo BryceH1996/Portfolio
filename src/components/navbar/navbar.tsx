@@ -38,7 +38,7 @@ export default function Navbar() {
   }, [lastScrollY]);
  
   return (
-    <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-20 bg-primary justify-between transition-shadow duration-300 z-100 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
+    <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-20 bg-primary justify-between transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
       <ul className='flex flex-wrap flex-row w-40 justify-between'>
         <li>
           <Link className={`link ${pathname === '/' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`} href="/">
@@ -67,6 +67,7 @@ export default function Navbar() {
               width={31}
               height={28}
               priority
+              style={{width: "auto", height: "28px"}}
             />
           </Link>
         </li>

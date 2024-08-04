@@ -1,21 +1,31 @@
+"use client"
+
 import CardLayout from "@/components/card-layout/card-layout";
 import PrimaryButton from "../components/button/primary-button";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 export default function Home() {
+
+  const textAnimation = {
+    type: "spring", 
+    stiffness: 60, 
+    damping: 9
+  }
+
   return (
     <main>
-      <CardLayout minHeight="min-h-with-nav" primary="bg-primary" secondary="bg-white" layer="z-30" margining="mb-4">
-        <div className="container mx-auto flex w-full flex-row">
-          <div className="flex flex-col w-4/12 xl:w-4/12 2xl:w-3/12 space-y-3 self-center py-12">
-            <h3 className="text-2xl font-bold">Hello, I&apos;m</h3>
-            <h1 className="font-bold"><span className="text-5xl mb-3 block white-block relative"><span className="z-10 relative">Bryce Hardie</span></span> <span className="text-2xl space-y-1">a Passionate <br></br>Front-end Developer</span></h1>
-            <h2 className="text-sm font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</h2>
-            <div>
-              <PrimaryButton className="inline-block" text="View portfolio" url="/portfolio"/>
-            </div>
+      <CardLayout minHeight="min-h-with-nav" primary="bg-primary" secondary="bg-white" layer="z-10" padding="pb-4" overflow="overflow-hidden">
+        <div className="container mx-auto flex w-full flex-row text-secondary">
+          <div className="flex flex-col lg:w-4/12 2xl:w-3/12 xl:space-y-3 space-y-2 self-center py-12">
+            <motion.h3 initial={{ x: -400 }} animate={{ x: 0 }} transition={textAnimation} className="text-xl xl:text-2xl font-bold">Hello, I&apos;m</motion.h3>
+            <h1 className="font-bold"><motion.span initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimation} className="xl:text-5xl text-4xl mb-3 white-block">Bryce Hardie</motion.span> <motion.span initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimation} className="text-xl xl:text-2xl space-y-1 block">a Passionate <br></br>Front-end Developer</motion.span></h1>
+            <motion.h2 initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimation} className="text-sm font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</motion.h2>
+            <motion.div initial={{ x: -400 }} animate={{ x: 0 }} transition={textAnimation}>
+              <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
+            </motion.div>
           </div>
-          <div className="flex flex-col w-7/12 xl:w-7/12 2xl:w-8/12 self-end">
+          <motion.div initial={{ y: 1000 }} animate={{ y: 0 }} transition={{type: "spring", stiffness: 300, damping: 100}} className="flex flex-col lg:w-6/12 2xl:w-8/12 self-end">
             <Image
                 className="relative"
                 src="/portrait-photo.png"
@@ -25,13 +35,13 @@ export default function Home() {
                 style={{ width: '100%', height: 'auto' }}
                 priority
               />
-          </div>
-          <div className="flex flex-col w-1/12 xl:w-2/12 2xl:w-1/12 space-y-8 self-center items-end py-12">
-            <div className="hero-points">
+          </motion.div>
+          <div className="flex flex-col lg:w-2/12 2xl:w-1/12 space-y-8 self-center items-end py-12">
+            <motion.div initial={{ x: 600 }} animate={{ x: 0 }} transition={textAnimation} className="hero-points">
               <h3 className="text-5xl font-bold">6</h3>
               <p className="text-sm font-bold">Years of Experience</p>
-            </div>
-            <div className="hero-points">
+            </motion.div>
+            <motion.div initial={{ x: 600 }} animate={{ x: 0 }} transition={textAnimation} className="hero-points">
               <h3 className="text-5xl font-bold">Tech</h3>
               <ul className="text-sm font-bold">
                 <li>Javascript</li>
@@ -39,35 +49,54 @@ export default function Home() {
                 <li>PHP</li>
                 <li>C#</li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </CardLayout>
-      <CardLayout minHeight="min-h-full" primary="bg-white" secondary="bg-primary" layer="z-20" margining="-mt-4">
-        <div className="container mx-auto flex w-full flex-col xl:pt-32 xl:pb-32 pt-20 pb-20">
+      <CardLayout minHeight="min-h-full" primary="bg-white" secondary="bg-primary" layer="z-10" margining="-mt-4" padding="pb-4" overflow="overflow-hidden">
+        <div className="container mx-auto flex w-full flex-col xl:pt-16 xl:pb-32 pt-12 pb-24">
           <div className="mb-4">
             <h2 className="text-text font-bold text-4xl">About Me</h2>
           </div>
-          <div className="flex flex-row">
-            <div className="w-6/12">          
-              <p className="text-text text-2xl">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl.
-              </p>--
-            </div>
-            <div className="w-6/12 text-sm space-y-3">
+          <div className="flex flex-row xl:gap-36 gap-24">
+            <div className="text-text w-6/12 text-sm space-y-3">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl. </p>
               <p>
                 Curabitur enim odio, ultrices sed iaculis eu, rutrum et nunc. Phasellus in <span className="font-bold brown-block">sem</span> quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer convallis purus et tellus imperdiet interdum. 
               </p>
             </div>
+            <div className="w-6/12">          
+              <p className="text-text text-2xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ipsum urna, tristique at porta in, scelerisque quis nisl.
+              </p>
+            </div>
           </div>
         </div>
       </CardLayout>
-      <section className=" min-h-full bg-white -mt-8 z-10">
-        <div className="flex w-full flex-row p-20 bg-primary rounded-b-4xl">
-
+      <CardLayout minHeight="min-h-full" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4">
+        <div className="container mx-auto flex w-full flex-row xl:pt-8 xl:pb-8 pt-6 pb-6">
+          {/* <Slider>
+              <Image
+                className="relative"
+                src="/a.png"
+                alt="Portrait photo"
+                width={0}
+                height={0}
+                style={{ width: '100%', height: 'auto', zIndex: 50, top: -75 }}
+                priority
+              />
+              <Image
+                className="relative"
+                src="/a.png"
+                alt="Portrait photo"
+                width={0}
+                height={0}
+                style={{ width: '35%', height: 'auto', zIndex: 50, top: -75 }}
+                priority
+              />
+          </Slider> */}
         </div>
-      </section>
+      </CardLayout>
     </main>
   );
 }

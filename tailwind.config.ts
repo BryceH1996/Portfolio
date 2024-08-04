@@ -18,7 +18,7 @@ const config: Config = {
     },
     extend:{
       minHeight:{
-        'with-nav': 'calc(30vh - 114px)'
+        'with-nav': 'calc(35vh - 114px)'
       }
     }
   },
