@@ -22,14 +22,6 @@ export default function Home() {
 
   return (
     <main>
-      <Image
-        src="/linkedin.svg"
-        alt="Vercel Logo"
-        className="dark:invert"
-        width={100}
-        height={24}
-        priority
-      />
       <CardLayout minHeight="min-h-with-nav" primary="bg-primary" secondary="bg-white" layer="z-10" padding="pb-4" overflow="overflow-hidden">
         <div className="container mx-auto flex w-full flex-row text-secondary">
           <div className="flex flex-col lg:w-4/12 2xl:w-3/12 xl:space-y-3 space-y-2 self-center py-12">
