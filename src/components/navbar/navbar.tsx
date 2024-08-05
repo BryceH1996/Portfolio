@@ -9,12 +9,11 @@ import { useState, useEffect } from 'react';
 export default function Navbar() {
   const pathname = usePathname()
   const [shadow, setShadow] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
-        if (window.scrollY > lastScrollY) {
+        if (window.scrollY > 0) {
           // if scrolling down, show box-shadow
           setShadow(true);
         } else {
@@ -23,19 +22,20 @@ export default function Navbar() {
         }
   
         // remember the current page location for the next move
-        setLastScrollY(window.scrollY);
       }
     };
 
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', controlNavbar);
+      window.addEventListener('load', controlNavbar);
 
       // cleanup function
       return () => {
         window.removeEventListener('scroll', controlNavbar);
+        window.removeEventListener('load', controlNavbar);
       };
     }
-  }, [lastScrollY]);
+  }, []);
  
   return (
     <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-20 bg-primary justify-between transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
