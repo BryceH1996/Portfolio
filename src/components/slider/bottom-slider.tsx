@@ -22,7 +22,8 @@ export default function SliderBottom() {
         <Swiper 
           modules={[Controller]}
           onSwiper={setFirstSwiper}
-          controller={{ control: secondSwiper }}>
+          controller={{ control: secondSwiper }}
+          loop={true}>
           {portfolioData.map((data, key) => {
             return (
               <SwiperSlide key={key}>
