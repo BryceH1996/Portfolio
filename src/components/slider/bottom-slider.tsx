@@ -18,7 +18,7 @@ export default function SliderBottom() {
 
   return (
     <div className="container mx-auto flex w-full flex-row xl:pt-6 xl:pb-12 pt-4 pb-8">
-      <div className="lg:w-6/12 xl:pr-16 -top-24 relative -mb-24">
+      <div className="lg:w-6/12 xl:pr-16 pr-12 -top-24 relative -mb-24">
         <Swiper 
           modules={[Controller]}
           onSwiper={setFirstSwiper}
@@ -39,7 +39,7 @@ export default function SliderBottom() {
           })}
         </Swiper>
       </div>
-      <div className="lg:w-6/12 xl:pl-16">
+      <div className="lg:w-6/12 xl:pl-16 pl-12">
         <h2 className="xl:text-4xl text-3xl font-bold text-secondary">Favourite Projects</h2>
         <Swiper         
           modules={[Controller, Pagination, Navigation, Autoplay]}
