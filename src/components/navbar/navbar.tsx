@@ -56,7 +56,7 @@ export default function Navbar() {
       </ul>
       <ul className='flex flex-wrap flex-row w-32 justify-between mx-2'>
         <li>
-          <PrimaryButton text="View CV" url="/" isOpenNewPage={true}/>
+          <PrimaryButton text="View CV" url="https://drive.google.com/file/d/1M1oGxJ2r6Uqxf8SWrllbkwBTDkKQps2u/view?usp=sharing" isOpenNewPage={true}/>
         </li>
         <li>
           <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
