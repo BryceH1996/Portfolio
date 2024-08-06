@@ -69,7 +69,7 @@ export default function SliderBottom() {
               </SwiperSlide>
             )
           })}
-          <div className='w-1/2 lg:w-1/3 flex flex-row items-end absolute bottom-0 lg:left-48 lg:right-auto right-0 justify-between'>
+          <div className='w-1/2 lg:w-1/3 flex flex-row items-end absolute bottom-0 lg:left-48 lg:right-auto right-0 justify-between text-secondary font-semibold'>
             <div className='custom-swiper-button-prev'></div>
             <div className='custom-swiper-pagination'></div>
             <div className='custom-swiper-button-next'></div>
