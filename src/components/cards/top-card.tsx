@@ -37,11 +37,11 @@ export default function TopCard() {
       </motion.div>
       <div className="flex flex-col lg:w-2/12 2xl:w-1/12 space-y-8 self-center items-end py-12">
         <motion.div initial={{ x: 600 }} animate={{ x: 0 }} transition={textAnimationTop} className="hero-points">
-          <h3 className="text-5xl font-bold">{yearsExperience}</h3>
+          <h3 className="xl:text-5xl text-4xl font-bold">{yearsExperience}</h3>
           <p className="text-sm font-bold">Years of Experience</p>
         </motion.div>
         <motion.div initial={{ x: 600 }} animate={{ x: 0 }} transition={textAnimationTop} className="hero-points">
-          <h3 className="text-5xl font-bold">Tech</h3>
+          <h3 className="xl:text-5xl text-4xl font-bold">Tech</h3>
           <ul className="text-sm font-bold">
             <li>Javascript</li>
             <li>React</li>
