@@ -38,7 +38,7 @@ export default function Navbar() {
   }, []);
  
   return (
-    <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-20 bg-primary justify-between transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
+    <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-8 lg:px-20 xl:px-32 bg-primary justify-between transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
       <ul className='flex flex-wrap flex-row w-40 justify-between'>
         <li>
           <Link className={`link ${pathname === '/' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`} href="/">
@@ -54,7 +54,7 @@ export default function Navbar() {
           </Link>
         </li>
       </ul>
-      <ul className='flex flex-wrap flex-row w-32 justify-between mx-2'>
+      <ul className='flex flex-wrap flex-row w-32 justify-between lg:mx-2'>
         <li>
           <PrimaryButton text="View CV" url="https://drive.google.com/file/d/1M1oGxJ2r6Uqxf8SWrllbkwBTDkKQps2u/view?usp=sharing" isOpenNewPage={true}/>
         </li>

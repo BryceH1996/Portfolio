@@ -16,7 +16,7 @@ export default function CardLayout({ children, minHeight, primary, secondary, la
   return (
     <section className={`${minHeight} ${secondary} ${margining} ${layer} relative ${padding}`}>
       <div className={`flex ${secondary} rounded-b-4xl shadow-md ${overflow} mb-4`}>
-        <div className={`w-full p-20 xl:p-32 xl:pt-4 xl:pb-0 pt-4 pb-0 ${primary} rounded-b-4xl`}>
+        <div className={`w-full p-8 lg:p-20 xl:p-32 xl:pt-4 xl:pb-0 lg:pt-4 lg:pb-0 pt-4 pb-0 ${primary} rounded-b-4xl`}>
           {children}
         </div>
       </div>
