@@ -7,6 +7,9 @@ import { portfolioData } from "../../../json/portfolio-data";
 import { useState } from "react";
 import Image from "next/image";
 import PrimaryButton from "../button/primary-button";
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faArrowUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
 
 export default function SliderBottom() {
   
@@ -42,6 +45,7 @@ export default function SliderBottom() {
           modules={[Controller, Pagination, Navigation, Autoplay]}
           onSwiper={setSecondSwiper}
           controller={{ control: firstSwiper }}
+          autoHeight={true}
           loop={true}
           autoplay={{delay: 10000}}
           navigation
@@ -54,7 +58,10 @@ export default function SliderBottom() {
             return (
               <SwiperSlide key={key}>
               <div className="text-secondary">
-                <h3 className="font-bold text-md mt-4 mb-4">Project: {data.project}</h3>
+                <div className="flex flex-row justify-between items-center">
+                  <h3 className="font-bold text-md mt-4 mb-4">Project: {data.project}</h3>
+                  <Link href={data.websiteURL} target='_blank'><FontAwesomeIcon icon={faArrowUpRightFromSquare} /></Link>
+                </div>
                 <p className="text-sm whitespace-pre-line">
                   {data.shortDescription}
                 </p>
