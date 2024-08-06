@@ -16,7 +16,7 @@ export default function TopCard() {
 
   return (
     <div className="container mx-auto flex w-full lg:flex-row flex-col text-secondary relative">
-      <div className="flex flex-col lg:w-4/12 2xl:w-3/12 xl:space-y-3 w-full space-y-2 self-center lg:py-12 order-1">
+      <div className="flex flex-col lg:w-4/12 2xl:w-3/12 xl:space-y-3 w-full space-y-2 self-center lg:py-12 order-1 z-20">
         <motion.h3 initial={{ x: -400 }} animate={{ x: 0 }} transition={textAnimationTop} className="text-xl xl:text-2xl font-bold">Hello, I&apos;m</motion.h3>
         <h1 className="font-bold"><motion.span initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimationTop} className="xl:text-5xl text-4xl mb-3 white-block">Bryce Hardie</motion.span> <motion.span initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimationTop} className="text-xl xl:text-2xl space-y-1 block">a Passionate <br></br>Front-end Developer</motion.span></h1>
         <motion.h2 initial={{ x: -600 }} animate={{ x: 0 }} transition={textAnimationTop} className="text-sm font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</motion.h2>
@@ -24,7 +24,7 @@ export default function TopCard() {
           <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
         </motion.div>
       </div>
-      <motion.div initial={{ y: 1000 }} animate={{ y: 0 }} transition={{type: "spring", stiffness: 300, damping: 100}} className="flex flex-col w-full lg:w-6/12 2xl:w-8/12 self-end lg:order-2 order-3 lg:relative absolute bottom-0">
+      <motion.div initial={{ y: 1000 }} animate={{ y: 0 }} transition={{type: "spring", stiffness: 300, damping: 100}} className="flex flex-col w-full lg:w-6/12 2xl:w-8/12 self-end lg:order-2 order-3 lg:relative absolute bottom-0 z-10">
         <Image
             className="relative"
             src="/portrait-photo.png"
@@ -35,7 +35,7 @@ export default function TopCard() {
             priority
           />
       </motion.div>
-      <div className="flex flex-col lg:w-2/12 2xl:w-1/12 w-full space-y-8 self-center lg:items-end lg:py-12 py-8 pb-32 lg:order-3 order-2">
+      <div className="flex flex-col lg:w-2/12 2xl:w-1/12 w-full space-y-8 self-center lg:items-end lg:py-12 py-8 pb-32 lg:order-3 order-2 z-20">
         <motion.div initial={{ x: 600 }} animate={{ x: 0 }} transition={textAnimationTop} className="hero-points">
           <h3 className="xl:text-5xl text-4xl font-bold">{yearsExperience}</h3>
           <p className="text-sm font-bold">Years of Experience</p>
