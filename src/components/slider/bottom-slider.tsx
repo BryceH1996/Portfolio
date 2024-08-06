@@ -48,7 +48,7 @@ export default function SliderBottom() {
           controller={{ control: firstSwiper }}
           autoHeight={true}
           loop={true}
-          autoplay={{delay: 10000}}
+          autoplay={{delay: 15000}}
           navigation={{nextEl: '.custom-swiper-button-next', prevEl: '.custom-swiper-button-prev',}}
           pagination={{el: '.custom-swiper-pagination', type: 'fraction',
             renderFraction: (currentClass, totalClass) => {
