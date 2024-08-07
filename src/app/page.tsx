@@ -15,7 +15,7 @@ export default function Home() {
       <CardLayout minHeight="min-h-card" primary="bg-white" secondary="bg-primary" layer="z-20" margining="-mt-4" padding="pb-4" overflow="overflow-hidden" alignment="items-center" animate={true} bottomValue={-400}>
         <AboutCard/>
       </CardLayout>
-      <CardLayout minHeight="min-h-card" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4 -mb-4" alignment="items-end" animate={true} bottomValue={-800}>
+      <CardLayout minHeight="min-h-card" primary="bg-primary" secondary="bg-light-gray" layer="z-10" margining="-mt-4 -mb-4" alignment="items-end" animate={true} bottomValue={-800}>
         <SliderBottom />
       </CardLayout>
     </main>
