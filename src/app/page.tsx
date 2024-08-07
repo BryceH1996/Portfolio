@@ -9,13 +9,13 @@ export default function Home() {
 
   return (
     <main>
-      <CardLayout minHeight="min-h-with-nav" primary="bg-primary" secondary="bg-white" layer="z-10" padding="pb-4" overflow="overflow-hidden">
+      <CardLayout minHeight="min-h-with-nav" primary="bg-primary" secondary="bg-white" layer="z-30" overflow="overflow-hidden" alignment="items-end">
         <TopCard />
       </CardLayout>
-      <CardLayout minHeight="min-h-full" primary="bg-white" secondary="bg-primary" layer="z-10" margining="-mt-4" padding="pb-4" overflow="overflow-hidden">
+      <CardLayout minHeight="min-h-card" primary="bg-white" secondary="bg-primary" layer="z-20" margining="-mt-4" padding="pb-4" overflow="overflow-hidden" alignment="items-center" animate={true}>
         <AboutCard/>
       </CardLayout>
-      <CardLayout minHeight="min-h-full" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4">
+      <CardLayout minHeight="min-h-card" primary="bg-primary" secondary="bg-white" layer="z-10" margining="-mt-4 -mb-4" alignment="items-end" animate={true}>
         <SliderBottom />
       </CardLayout>
     </main>

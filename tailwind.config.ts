@@ -18,7 +18,8 @@ const config: Config = {
     },
     extend:{
       minHeight:{
-        'with-nav': 'calc(35vh - 114px)'
+        'with-nav': 'calc(60vh - 114px)',
+        'card': '58vh'
       }
     }
   },

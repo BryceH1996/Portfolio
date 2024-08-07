@@ -72,6 +72,18 @@ body {
   max-width: 100%;
 }
 
+.last-card:before{
+  content: '';
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  height: 5rem;
+  left: 0;
+  border-bottom-right-radius: 2.8rem;
+  border-bottom-left-radius: 2.8rem;
+}
+
 .swiper .custom-swiper-pagination{
   position: relative;
   text-align: center;

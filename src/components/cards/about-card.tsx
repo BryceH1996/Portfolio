@@ -12,12 +12,12 @@ export default function AboutCard() {
   }
 
   return (
-    <div className="container mx-auto flex w-full flex-col lg:pt-16 lg:pb-32 pt-4 pb-24">
+    <div className="container mx-auto flex w-full flex-col lg:pb-24 lg:pt-20 pt-4 pb-24">
       <div className="mb-4">
         <motion.h2 initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1}} transition={textAnimationAbout} viewport={{ once: true }} className="text-text font-bold text-2xl lg:text-4xl">About Me</motion.h2>
       </div>
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-24 xl:gap-32 items-center">
-        <div className="text-text w-full lg:w-6/12 text-sm space-y-3">
+        <div className="text-text w-full lg:w-6/12 text-md space-y-3">
           <motion.p initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1}} transition={textAnimationAbout} viewport={{ once: true }}>I am a dedicated <span className="font-bold brown-block">Front-end</span> Developer with a sharp eye for detail and a commitment to building websites that achieve <span className="font-bold brown-block">pixel-perfect</span> precision. </motion.p>
           <motion.p initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1}} transition={textAnimationAbout} viewport={{ once: true }}>
             My background includes extensive experience in <span className="font-bold brown-block">agency</span> environments, where I have worked closely with clients and collaborated with small to medium-sized teams. I value <span className="font-bold brown-block">teamwork</span> and approach challenges with a positive, <span className="font-bold brown-block">optimistic</span> attitude.

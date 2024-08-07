@@ -19,7 +19,7 @@ export default function TopCard() {
       <div className="flex flex-col lg:w-4/12 2xl:w-3/12 xl:space-y-3 w-full space-y-2 self-center lg:py-12 order-1 z-20">
         <motion.h3 initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop} className="text-xl xl:text-2xl font-bold">Hello, I&apos;m</motion.h3>
         <h1 className="font-bold"><motion.span initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop} className="xl:text-5xl text-4xl mb-3 white-block">Bryce Hardie</motion.span> <motion.span initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop} className="text-xl xl:text-2xl space-y-1 block">a Passionate <br></br>Front-end Developer</motion.span></h1>
-        <motion.h2 initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop} className="text-sm font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</motion.h2>
+        <motion.h2 initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop} className="text-md font-bold hero-paragraph">A dedicated Front-end Developer with a passion for creating pixel perfect fast loading websites.</motion.h2>
         <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={textAnimationTop}>
           <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
         </motion.div>
