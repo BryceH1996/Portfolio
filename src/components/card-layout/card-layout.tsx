@@ -13,14 +13,17 @@ interface cardLayoutProps{
   overflow?: string;
   alignment?: string;
   animate?: boolean;
+  bottomValue?: number;
 }
 
-export default function CardLayout({ children, minHeight, primary, secondary, layer, margining, padding, overflow, alignment, animate=false}: cardLayoutProps) {
+export default function CardLayout({ children, minHeight, primary, secondary, layer, margining, padding, overflow, alignment, animate=false, bottomValue}: cardLayoutProps) {
 
   const variants = {
     visible: { y: 0 },
-    hidden: { y: -300 },
+    hidden: { y: bottomValue },
   }
+
+  console.log(variants);
 
   return (
     <motion.section initial={animate ? "hidden" : "visible"} animate="visible" variants={variants} transition={{duration: 1}} className={`${minHeight} ${secondary} ${margining} ${layer} relative ${padding}`}>
