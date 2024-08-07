@@ -1,16 +1,25 @@
+'use client'
+
 import Link from 'next/link';
 import Image from "next/image";
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
   
+  const pathname = usePathname()
   const currentDate = new Date().getFullYear();
+  const variants = {
+    visible: { y: 0 },
+    hidden: { y: -800 },
+  }
 
   return (
-    <footer className='flex flex-row px-32 py-16 bg-white justify-between'>
+    <motion.footer initial={pathname === '/' ? "hidden" : "visible"}  animate="visible"  variants={variants} transition={{duration: 1}} className='flex flex-col-reverse lg:flex-row px-8 py-12 lg:px-32 lg:py-16 bg-white justify-between'>
       <div>
-        <p className='text-sm text-text'>©{currentDate} Website Powered by Bryce Hardie. Designed in collaboration with Connor Easton. All rights reserved.</p>
+        <p className='text-sm text-text'>©{currentDate} Website Powered by Bryce Hardie. Designed in collaboration with Connor Easton. <br/><br/>All rights reserved.</p>
       </div>
-      <div>
+      <div className='mb-6 lg:mb-0'>
         <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
           <Image
             className="relative"
@@ -23,6 +32,6 @@ export default function Footer() {
           />
         </Link>
       </div>
-    </footer>
+    </motion.footer>
   )
 }

@@ -13,7 +13,7 @@ export default function BasicButton({text, url, isOpenNewPage=false, className}:
 
   return (
     <Link className={`text-secondary text-xs font-semibold py-3 ${className}`} href={url} target={isOpenNewPage ? "_blank" : ""}>
-      {text} <FontAwesomeIcon icon={faChevronRight} className='ml-1' />
+      {text} <FontAwesomeIcon icon={faChevronRight} className='ml-1 text-xs' />
     </Link>
   )
 }

@@ -4,6 +4,9 @@ import "./globals.css";
 import Navbar from "../components/navbar/navbar";
 import "swiper/css/bundle";
 import Footer from "@/components/footer/footer";
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { config } from '@fortawesome/fontawesome-svg-core';
+config.autoAddCss = false;
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
