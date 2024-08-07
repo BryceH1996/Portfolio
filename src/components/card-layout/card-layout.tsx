@@ -25,7 +25,7 @@ export default function CardLayout({ children, minHeight, primary, secondary, la
 
   return (
     <motion.section initial={animate ? "hidden" : "visible"}  animate="visible"  variants={variants} transition={{duration: 1}} className={`${minHeight} ${secondary} ${margining} ${layer} relative ${padding}`}>
-      <div className={`flex ${minHeight} ${primary} rounded-b-4xl shadow-md ${overflow} ${alignment} mb-4`}>
+      <div className={`flex ${minHeight} ${primary} rounded-b-4xl shadow-md ${overflow} ${alignment}`}>
         <div className={`w-full p-8 lg:p-20 xl:p-32 xl:pt-4 xl:pb-0 lg:pt-4 lg:pb-0 pt-4 pb-0 ${primary} rounded-b-4xl`}>
           {children}
         </div>
