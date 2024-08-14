@@ -12,7 +12,7 @@ export default function AboutCard() {
   }
 
   return (
-    <div className="container mx-auto flex w-full flex-col lg:pb-24 lg:pt-20 pt-4 pb-24">
+    <div className="container mx-auto flex w-full flex-col lg:pb-24 lg:pt-20 pt-16 pb-24">
       <div className="mb-4">
         <motion.h2 initial={{ y: 30, opacity: 0 }} whileInView={{ y: 0, opacity: 1}} transition={textAnimationAbout} viewport={{ once: true }} className="text-text font-bold text-2xl lg:text-4xl">About Me</motion.h2>
       </div>
