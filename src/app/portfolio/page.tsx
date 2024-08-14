@@ -5,7 +5,7 @@ import BasicButton from "@/components/button/basic-buttom";
 export default function Portfolio() {
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <section className="h-96 w-full">
+      <section className="max-h-96 h-full w-full">
         <Image
           className="relative object-cover object-center max-h-96"
           src="/portfolio-library.jpg"
@@ -18,7 +18,7 @@ export default function Portfolio() {
       </section>
       <section className="p-8 lg:p-20 xl:p-32">
         <div className="container mx-auto ">
-          <h1 className="text-text font-bold text-5xl text-center mb-12">My Portfolio</h1>
+          <h1 className="text-text font-bold text-4xl lg:text-5xl text-center mb-12">My Portfolio</h1>
           <div className="flex flex-row flex-wrap justify-between gap-8">
             {portfolioData.map((data, key) => {
               return(

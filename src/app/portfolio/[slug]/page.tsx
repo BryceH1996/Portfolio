@@ -17,15 +17,17 @@ export default function Page({ params }: { params: { slug: string } }) {
           if(data.slug == slug)
           return (
             <div key={key}>
-              <section>
-                <Image
-                  src={data.topBanner}
-                  alt='Project main banner image'
-                  width={0}
-                  height={0}
-                  style={{ width: '100%', height: '55vh', objectFit: 'cover', objectPosition: 'top center' }}
-                  priority
-                />
+              <section className="relative">
+                <div className="image-overlay">
+                  <Image
+                    src={data.topBanner}
+                    alt='Project main banner image'
+                    width={0}
+                    height={0}
+                    style={{ width: '100%', height: '55vh', maxHeight: '80vw', objectFit: 'cover', objectPosition: 'top center' }}
+                    priority
+                  />
+                </div>
               </section>
               <section className="w-full p-8 xl:p-20">
                 <div className="container mx-auto flex flex-col lg:flex-row space-y-8 lg:space-x-24 lg:space-y-0">
