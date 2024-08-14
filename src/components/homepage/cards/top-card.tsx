@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import PrimaryButton from "../button/primary-button";
+import PrimaryButton from "../../button/primary-button";
 
 
 export default function TopCard() {

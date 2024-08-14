@@ -21,6 +21,10 @@ const config: Config = {
       minHeight:{
         'with-nav': 'calc(60vh - 114px)',
         'card': '58vh'
+      },
+      width:{
+        '3.5/12': 'calc(33.33% - 2rem)',
+        '0.5/2': 'calc(50% - 2rem)',
       }
     }
   },

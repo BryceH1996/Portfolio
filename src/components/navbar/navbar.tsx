@@ -38,40 +38,42 @@ export default function Navbar() {
   }, []);
  
   return (
-    <nav className={`sticky top-0 flex flex-wrap flex-row p-6 px-8 lg:px-20 xl:px-32 bg-primary justify-between transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
-      <ul className='flex flex-wrap flex-row w-40 justify-between'>
-        <li>
-          <Link className={`link ${pathname === '/' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`} href="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link
-            className={`link ${pathname === '/portfolio' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`}
-            href="/portfolio"
-          >
-            My Portfolio
-          </Link>
-        </li>
-      </ul>
-      <ul className='flex flex-wrap flex-row w-32 justify-between lg:mx-2'>
-        <li>
-          <PrimaryButton text="View CV" url="https://drive.google.com/file/d/1M1oGxJ2r6Uqxf8SWrllbkwBTDkKQps2u/view?usp=sharing" isOpenNewPage={true}/>
-        </li>
-        <li>
-          <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
-            <Image
-              className="relative"
-              src="/linkenIn-logo.svg"
-              alt="Linkedin Logo"
-              width={31}
-              height={28}
-              priority
-              style={{width: "auto", height: "28px"}}
-            />
-          </Link>
-        </li>
-      </ul>
+    <nav className={`sticky top-0 p-6 px-8 lg:px-12 xl:px-20 bg-primary transition-shadow duration-300 z-40 ${shadow ? 'shadow-md' : 'shadow-none'}`}>
+      <div className='container mx-auto flex flex-wrap flex-row justify-between'>
+        <ul className='flex flex-wrap flex-row w-40 justify-between'>
+          <li>
+            <Link className={`link ${pathname === '/' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`} href="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              className={`link ${pathname === '/portfolio' ? 'font-bold border-b-2 border-secondary' : 'font-medium'} text-secondary text-sm py-1`}
+              href="/portfolio"
+            >
+              My Portfolio
+            </Link>
+          </li>
+        </ul>
+        <ul className='flex flex-wrap flex-row w-32 justify-between lg:mx-2'>
+          <li>
+            <PrimaryButton text="View CV" url="https://drive.google.com/file/d/1M1oGxJ2r6Uqxf8SWrllbkwBTDkKQps2u/view?usp=sharing" isOpenNewPage={true}/>
+          </li>
+          <li>
+            <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
+              <Image
+                className="relative"
+                src="/linkenIn-logo.svg"
+                alt="Linkedin Logo"
+                width={31}
+                height={28}
+                priority
+                style={{width: "auto", height: "28px"}}
+              />
+            </Link>
+          </li>
+        </ul>
+      </div>
     </nav>
   )
 }

@@ -3,14 +3,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Controller, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { type Swiper as SwiperTypes } from 'swiper';
-import { portfolioData } from "../../../json/portfolio-data";
+import { portfolioData } from "../../../../json/portfolio-data";
 import { useState } from "react";
 import Image from "next/image";
-import PrimaryButton from "../button/primary-button";
-import BasicButton from '../button/basic-buttom';
-import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faArrowUpRightFromSquare} from '@fortawesome/free-solid-svg-icons'
+import PrimaryButton from "../../button/primary-button";
+import BasicButton from '../../button/basic-buttom';
 
 export default function SliderBottom() {
   
@@ -20,8 +17,8 @@ export default function SliderBottom() {
   return (
     <div className="container mx-auto flex w-full flex-col lg:flex-row xl:pt-6 xl:pb-12 pt-4 pb-8 items-start last-card">
       <div className='flex lg:flex-row flex-col justify-between lg:hidden block mb-3'>
-        <h2 className="xl:text-4xl text-3xl mt-6 lg:mt-0 font-bold text-secondary">Favourite Projects</h2>
-        <BasicButton className="inline-block" text="View all projects" url="/portfolio" />
+        <h2 className="xl:text-4xl text-3xl mt-6 lg:mt-0 font-bold text-secondary pb-3">Favourite Projects</h2>
+        <BasicButton className="inline-block text-secondary font-semibold" text="View all projects" url="/portfolio" />
       </div>
       <div className="w-full lg:w-6/12 pr-0 lg:pr-12 xl:pr-16 lg:pb-0 pb-2 relative">
         <Swiper 
@@ -30,12 +27,13 @@ export default function SliderBottom() {
           controller={{ control: secondSwiper }}
           loop={true}>
           {portfolioData.map((data, key) => {
+            if(data.favourited)
             return (
               <SwiperSlide key={key}>
                 <Image
                   className="relative"
                   src={data.mainImage}
-                  alt="Portrait photo"
+                  alt={data.mainImageAlt}
                   width={0}
                   height={0}
                   style={{ width: '100%', height: 'auto' }}
@@ -47,8 +45,8 @@ export default function SliderBottom() {
       </div>
       <div className="w-full lg:w-6/12 pl-0 lg:pl-12 xl:pl-16 pb-16">
         <div className='flex lg:flex-row flex-col justify-between lg:block hidden'>
-          <h2 className="xl:text-4xl text-3xl mt-6 lg:mt-0 font-bold text-secondary">Favourite Projects</h2>
-          <BasicButton className="inline-block" text="View all projects" url="/portfolio" />
+          <h2 className="xl:text-4xl text-3xl mt-6 lg:mt-0 font-bold text-secondary pb-3">Favourite Projects</h2>
+          <BasicButton className="inline-block text-secondary font-semibold" text="View all projects" url="/portfolio" />
         </div>
         <Swiper         
           modules={[Controller, Pagination, Navigation, Autoplay, EffectFade]}
@@ -66,6 +64,7 @@ export default function SliderBottom() {
               }
           }}>
           {portfolioData.map((data, key) => {
+            if(data.favourited)
             return (
               <SwiperSlide key={key} className='lg:pb-0 pb-16'>
                 <div className="text-secondary">
@@ -76,8 +75,8 @@ export default function SliderBottom() {
                     {data.shortDescription}
                   </p>
                 </div>
-                <PrimaryButton className="inline-block mt-6" text="View project" url="/portfolio"/>
-                <BasicButton className="inline-block mt-6 ml-6" text="View website" url={data.websiteURL} />
+                <PrimaryButton className="inline-block mt-6" text="View project" isOpenNewPage={true} url={`/portfolio/${data.slug}`}/>
+                <BasicButton className="inline-block mt-6 ml-6 text-secondary font-semibold" text="View website" url={data.websiteURL} />
               </SwiperSlide>
             )
           })}

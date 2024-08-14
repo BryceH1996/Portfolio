@@ -1,9 +1,9 @@
 "use client"
 
 import CardLayout from "@/components/card-layout/card-layout";
-import SliderBottom from "../components/slider/bottom-slider"
-import TopCard from "@/components/cards/top-card";
-import AboutCard from "@/components/cards/about-card";
+import SliderBottom from "../components/homepage/slider/bottom-slider"
+import TopCard from "../components/homepage/cards/top-card";
+import AboutCard from "../components/homepage/cards/about-card";
 
 export default function Home() {
 
