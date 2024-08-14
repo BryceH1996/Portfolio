@@ -23,15 +23,15 @@ export default function Page({ params }: { params: { slug: string } }) {
                   alt='Project main banner image'
                   width={0}
                   height={0}
-                  style={{ width: '100%', height: '55vh', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '55vh', objectFit: 'cover', objectPosition: 'top center' }}
                   priority
                 />
               </section>
-              <section className="w-full p-12 xl:p-20">
+              <section className="w-full p-8 xl:p-20">
                 <div className="container mx-auto flex flex-col lg:flex-row space-y-8 lg:space-x-24 lg:space-y-0">
                   <div className="w-full lg:w-7/12 flex flex-col text-text space-y-6">
                     <h1 className="font-bold text-5xl">{data.project}</h1>
-                    <div className="flex flex-row space-x-2">
+                    <div className="flex flex-row flex-wrap gap-2">
                       {data.techStack.map((tech, techKey) => {
                         return(
                           <div key={techKey} className="px-2 bg-primary font-semibold">{tech}</div>
