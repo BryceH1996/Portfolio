@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { portfolioData } from "../../../json/portfolio-data";
 import BasicButton from "@/components/button/basic-buttom";
+import Link from "next/link";
 
 export default function Portfolio() {
   return (
@@ -22,15 +23,17 @@ export default function Portfolio() {
           <div className="flex flex-row flex-wrap justify-between gap-8">
             {portfolioData.map((data, key) => {
               return(
-                <div className="w-full md:w-0.5/2 xl:w-3.5/12 image-overlay relative" key={key}>
-                  <Image
-                    src={data.mainImage}
-                    alt={data.mainImageAlt}
-                    width={0}
-                    height={0}
-                    style={{ width: '100%', height: 'auto' }}
-                    priority
-                  />
+                <div key={key} className="relative w-full md:w-0.5/2 xl:w-3.5/12 overflow-hidden">
+                  <Link href={`/portfolio/${data.slug}`} className="image-overlay image-scale relative" key={key}>
+                    <Image
+                      src={data.mainImage}
+                      alt={data.mainImageAlt}
+                      width={0}
+                      height={0}
+                      style={{ width: '100%', height: 'auto' }}
+                      priority
+                    />
+                  </Link>
                   <div className="absolute flex flex-col w-full z-10 bottom-0 p-6 pt-0 gap-2">
                     <h3 className="text-white text-lg font-bold">{data.project}</h3>
                     <p className="text-white text-sm">{data.shortDescription.substring(0, 100)}...</p>

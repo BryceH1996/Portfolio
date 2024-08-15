@@ -67,6 +67,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <Image
                       src={data.problemOneImage}
                       alt='First issue image'
+                      className="border border-medium-gray"
                       width={0}
                       height={0}
                       style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
@@ -84,7 +85,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     <p className="text-sm whitespace-pre-line text-text">{data.problemTwoText}</p>
                   </div>
                   <div className="w-full lg:w-1/2">
-                  <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto">
+                  <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto" className="border border-medium-gray pb-1">
                     <source src={data.problemTwoImage} type="video/mp4" />
                     <track
                       src={data.problemTwoImage}
@@ -100,7 +101,7 @@ export default function Page({ params }: { params: { slug: string } }) {
               <section className="w-full p-8 pb-20 xl:px-20 xl:pt-0 xl:pb-20 ">
                 <div className={`container mx-auto flex flex-row gap-12 items-center ${previousItem && nextItem ? "justify-between" : ""} ${previousItem && !nextItem ? "justify-start" : ""} ${!previousItem && nextItem ? "justify-end" : ""}`}>
                 {previousItem ? 
-                  <Link href={previousItem.slug} className="flex flex-row items-center block justify-start border-2 border-secondary">
+                  <Link href={previousItem.slug} className="flex flex-row items-center block justify-start border border-medium-gray">
                     <Image
                       src={previousItem.mainImage}
                       alt='Previous portfolio image'
@@ -115,7 +116,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                     </div>
                   </Link> : ""}
                   {nextItem ? 
-                  <Link href={nextItem.slug} className="flex flex-row items-center block justify-end border-2 border-secondary">
+                  <Link href={nextItem.slug} className="flex flex-row items-center block justify-end border border-medium-gray">
                     <div className="flex flex-col px-6 min-w-32">
                       <h3 className="font-semibold text-sm">Next:</h3>
                       <h4 className="font-bold">{nextItem.project}</h4>

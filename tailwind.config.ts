@@ -13,6 +13,7 @@ const config: Config = {
       'text': '#333333',
       'white': '#ffffff',
       'light-gray': '#F9F2E8',
+      'medium-gray': '#d4d4d4'
     },
     borderRadius: {
       '4xl': '2.8rem',
