@@ -10,10 +10,13 @@ export function generateStaticParams() {
  
 export default function Page({ params }: { params: { slug: string } }) {
   const { slug } = params
+  
   return(
 
     <main className="bg-white">
-        {portfolioData.map((data, key) => {
+        {portfolioData.map((data, key, array) => {
+          const previousItem = array[key - 1];
+          const nextItem = array[key + 1];
           if(data.slug == slug)
           return (
             <div key={key}>
@@ -92,6 +95,40 @@ export default function Page({ params }: { params: { slug: string } }) {
                     Your browser does not support the video tag.
                   </video>
                   </div>
+                </div>
+              </section>
+              <section className="w-full p-8 pb-20 xl:px-20 xl:pt-0 xl:pb-20 ">
+                <div className={`container mx-auto flex flex-row gap-12 items-center ${previousItem && nextItem ? "justify-between" : ""} ${previousItem && !nextItem ? "justify-start" : ""} ${!previousItem && nextItem ? "justify-end" : ""}`}>
+                {previousItem ? 
+                  <Link href={previousItem.slug} className="flex flex-row items-center block justify-start border-2 border-secondary">
+                    <Image
+                      src={previousItem.mainImage}
+                      alt='Previous portfolio image'
+                      width={0}
+                      height={0}
+                      style={{ width: '100%', height: 'auto', maxWidth: '150px', objectFit: 'cover' }}
+                      priority
+                    />
+                    <div className="flex flex-col px-6 min-w-32">
+                      <h3 className="font-semibold text-sm">Previous:</h3>
+                      <h4 className="font-bold">{previousItem.project}</h4>
+                    </div>
+                  </Link> : ""}
+                  {nextItem ? 
+                  <Link href={nextItem.slug} className="flex flex-row items-center block justify-end border-2 border-secondary">
+                    <div className="flex flex-col px-6 min-w-32">
+                      <h3 className="font-semibold text-sm">Next:</h3>
+                      <h4 className="font-bold">{nextItem.project}</h4>
+                    </div>
+                    <Image
+                      src={nextItem.mainImage}
+                      alt='Previous portfolio image'
+                      width={0}
+                      height={0}
+                      style={{ width: '100%', height: 'auto', maxWidth: '150px', objectFit: 'cover' }}
+                      priority
+                    />
+                  </Link> : ""}
                 </div>
               </section>
             </div>
