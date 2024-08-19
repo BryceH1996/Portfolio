@@ -11,10 +11,14 @@ export const portfolioData = [
     mainImageAlt: 'Hupu banner image',
     topBanner: '/hupu-squared.jpg',
     roleOnProject: 'Frontend Developer',
-    problemOneImage: '',
-    problemOneText: '',
-    problemTwoImage: '',
-    problemTwoText: ''
+    problemContent: [
+      'Implemented a custom filtering mechanism for a Vue Storefront application to enhance data management and presentation. This solution facilitates the handling of data received from the Advance endpoint API, ensuring that all relevant data is processed on the frontend.\n\nThe filter allows for dynamic adjustment of data visibility, enabling precise control over which information is displayed to users. This approach not only optimizes the user experience by presenting relevant content but also improves the efficiency of data handling and display within the application.',
+      "At the outset, Vue Storefront's default setup supported only a single layer of navigation. When onTap proposed a requirement for multi-level navigation to enhance their user interface, I undertook the challenge of customizing the platform.\n\nI achieved this by overriding core components and extending the navigation capabilities to accommodate multiple hierarchical levels. This modification allowed onTap to implement a more complex and user-friendly navigation structure, tailored to their specific needs.\n\nBy extending the default navigation functionality, I ensured that the application could handle intricate navigation schemes, thereby improving the overall user experience and meeting onTap's requirements for a more sophisticated and flexible navigation system."
+    ],
+    problemImage: [
+      '/ontap/ontap-first-task.png', 
+      '/ontap/ontap-navigation.mp4',
+    ],
   },
   {
     project: "onTap",
@@ -28,10 +32,14 @@ export const portfolioData = [
     mainImageAlt: 'onTap banner image',
     topBanner: '/ontap/ontap-top-banner.png',
     roleOnProject: 'Frontend Developer',
-    problemOneImage: '/ontap/ontap-first-task.png',
-    problemOneText: 'Implemented a custom filtering mechanism for a Vue Storefront application to enhance data management and presentation. This solution facilitates the handling of data received from the Advance endpoint API, ensuring that all relevant data is processed on the frontend.\n\nThe filter allows for dynamic adjustment of data visibility, enabling precise control over which information is displayed to users. This approach not only optimizes the user experience by presenting relevant content but also improves the efficiency of data handling and display within the application.',
-    problemTwoImage: '/ontap/ontap-navigation.mp4',
-    problemTwoText: "At the outset, Vue Storefront's default setup supported only a single layer of navigation. When onTap proposed a requirement for multi-level navigation to enhance their user interface, I undertook the challenge of customizing the platform.\n\nI achieved this by overriding core components and extending the navigation capabilities to accommodate multiple hierarchical levels. This modification allowed onTap to implement a more complex and user-friendly navigation structure, tailored to their specific needs.\n\nBy extending the default navigation functionality, I ensured that the application could handle intricate navigation schemes, thereby improving the overall user experience and meeting onTap's requirements for a more sophisticated and flexible navigation system."
+    problemContent: [
+      'Implemented a custom filtering mechanism for a Vue Storefront application to enhance data management and presentation. This solution facilitates the handling of data received from the Advance endpoint API, ensuring that all relevant data is processed on the frontend.\n\nThe filter allows for dynamic adjustment of data visibility, enabling precise control over which information is displayed to users. This approach not only optimizes the user experience by presenting relevant content but also improves the efficiency of data handling and display within the application.',
+      "At the outset, Vue Storefront's default setup supported only a single layer of navigation. When onTap proposed a requirement for multi-level navigation to enhance their user interface, I undertook the challenge of customizing the platform.\n\nI achieved this by overriding core components and extending the navigation capabilities to accommodate multiple hierarchical levels. This modification allowed onTap to implement a more complex and user-friendly navigation structure, tailored to their specific needs.\n\nBy extending the default navigation functionality, I ensured that the application could handle intricate navigation schemes, thereby improving the overall user experience and meeting onTap's requirements for a more sophisticated and flexible navigation system.",
+    ],
+    problemImage: [
+      '/ontap/ontap-first-task.png', 
+      '/ontap/ontap-navigation.mp4',
+    ],
   },
   {
     project: "onTap",
@@ -45,9 +53,13 @@ export const portfolioData = [
     mainImageAlt: 'onTap banner image',
     topBanner: '/ontap/ontap-top-banner.png',
     roleOnProject: 'Frontend Developer',
-    problemOneImage: '/ontap/ontap-first-task.png',
-    problemOneText: 'Implemented a custom filtering mechanism for a Vue Storefront application to enhance data management and presentation. This solution facilitates the handling of data received from the Advance endpoint API, ensuring that all relevant data is processed on the frontend.\n\nThe filter allows for dynamic adjustment of data visibility, enabling precise control over which information is displayed to users. This approach not only optimizes the user experience by presenting relevant content but also improves the efficiency of data handling and display within the application.',
-    problemTwoImage: '/ontap/ontap-navigation.mp4',
-    problemTwoText: "At the outset, Vue Storefront's default setup supported only a single layer of navigation. When onTap proposed a requirement for multi-level navigation to enhance their user interface, I undertook the challenge of customizing the platform.\n\nI achieved this by overriding core components and extending the navigation capabilities to accommodate multiple hierarchical levels. This modification allowed onTap to implement a more complex and user-friendly navigation structure, tailored to their specific needs.\n\nBy extending the default navigation functionality, I ensured that the application could handle intricate navigation schemes, thereby improving the overall user experience and meeting onTap's requirements for a more sophisticated and flexible navigation system."
+    problemContent: [
+      'Implemented a custom filtering mechanism for a Vue Storefront application to enhance data management and presentation. This solution facilitates the handling of data received from the Advance endpoint API, ensuring that all relevant data is processed on the frontend.\n\nThe filter allows for dynamic adjustment of data visibility, enabling precise control over which information is displayed to users. This approach not only optimizes the user experience by presenting relevant content but also improves the efficiency of data handling and display within the application.',
+      "At the outset, Vue Storefront's default setup supported only a single layer of navigation. When onTap proposed a requirement for multi-level navigation to enhance their user interface, I undertook the challenge of customizing the platform.\n\nI achieved this by overriding core components and extending the navigation capabilities to accommodate multiple hierarchical levels. This modification allowed onTap to implement a more complex and user-friendly navigation structure, tailored to their specific needs.\n\nBy extending the default navigation functionality, I ensured that the application could handle intricate navigation schemes, thereby improving the overall user experience and meeting onTap's requirements for a more sophisticated and flexible navigation system."
+    ],
+    problemImage: [
+      '/ontap/ontap-first-task.png', 
+      '/ontap/ontap-navigation.mp4',
+    ],
   }
 ]
