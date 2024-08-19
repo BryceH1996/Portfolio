@@ -17,7 +17,11 @@ export default function Footer() {
   return (
     <motion.footer initial={pathname === '/' ? "hidden" : "visible"}  animate="visible"  variants={variants} transition={{duration: 1}} className='flex flex-col-reverse lg:flex-row px-8 py-12 lg:px-32 lg:py-16 bg-light-gray justify-between'>
       <div>
-        <p className='text-sm text-secondary'>©{currentDate} Website Powered by Bryce Hardie. Designed in collaboration with Connor Easton. <br/><br/>All rights reserved.</p>
+        <div className='text-sm text-secondary space-y-2'>
+          <p>©{currentDate} Website Powered by Bryce Hardie. Designed in collaboration with Connor Easton.</p>
+          <p>Code is available <Link href='https://github.com/BryceH1996/portfolio' target='_blank' className='underline'>here</Link></p>
+          <p>All rights reserved.</p>
+        </div>
       </div>
       <div className='mb-6 lg:mb-0'>
         <Link href="https://www.linkedin.com/in/brycehardie01/" target='_blank'>
