@@ -66,44 +66,47 @@ export default function Page({ params }: { params: { slug: string } }) {
                 {data.problemContent.map((content, index) => {
                   return(
                     content[index] && index%2 == 0 ?         
-                      <section key={index} className="w-full p-8 xl:p-20 ">
+                      <section key={index} className={`w-full p-8 ${data.problemImage[index] ? 'xl:py-12 xl:px-20' : 'xl:py-4 xl:px-20'}`}>
                         <div className="container mx-auto flex flex-col lg:flex-row space-y-12 lg:space-x-24 lg:space-y-0 items-center">
-                          <div className="w-full lg:w-1/2">
-                            {data.problemImage[index].includes('.mp4') ? 
-                              <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto" className="border border-medium-gray pb-1">
-                                <source src={data.problemImage[index]} type="video/mp4" />
-                                <track
+                          {data.problemImage[index] ? 
+                            <div className="w-full lg:w-1/2">
+                              {data.problemImage[index].includes('.mp4') ? 
+                                <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto" className="border border-medium-gray pb-1">
+                                  <source src={data.problemImage[index]} type="video/mp4" />
+                                  <track
+                                    src={data.problemImage[index]}
+                                    kind="subtitles"
+                                    srcLang="en"
+                                    label="English"
+                                  />
+                                  Your browser does not support the video tag.
+                                </video>
+                                :
+                                <Image
                                   src={data.problemImage[index]}
-                                  kind="subtitles"
-                                  srcLang="en"
-                                  label="English"
+                                  alt='Left side images'
+                                  className="border border-medium-gray"
+                                  width={0}
+                                  height={0}
+                                  style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+                                  priority
                                 />
-                                Your browser does not support the video tag.
-                              </video>
-                              :
-                              <Image
-                                src={data.problemImage[index]}
-                                alt='Left side images'
-                                className="border border-medium-gray"
-                                width={0}
-                                height={0}
-                                style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
-                                priority
-                              />
-                            }
-                          </div>
-                          <div className="w-full lg:w-1/2">
+                              }
+                            </div>
+                          : ""}
+                          <div className={`w-full ${data.problemImage[index] ? 'lg:w-1/2' : 'lg:w-full'}`}>
                             <p className="text-sm whitespace-pre-line text-text">{content}</p>
                           </div>
                         </div>
                       </section>
                       :
-                      <section key={index} className="w-full p-8 pb-20 xl:p-20 ">
+                      <section key={index} className={`w-full p-8 ${data.problemImage[index] ? 'xl:py-12 xl:px-20' : 'xl:py-4 xl:px-20 xl:pb-20'}`}>
                         <div className="container mx-auto flex flex-col-reverse lg:flex-row space-y-12 lg:space-x-24 lg:space-y-0 items-center">
-                          <div className="w-full lg:w-1/2">
+                          <div className={`w-full ${data.problemImage[index] ? 'lg:w-1/2' : 'lg:w-full'}`}>
                             <p className="text-sm whitespace-pre-line text-text">{content}</p>
                           </div>
-                          <div className="w-full lg:w-1/2">
+                          {data.problemImage[index] ?  
+                            <div className="w-full lg:w-1/2">
                             {data.problemImage[index].includes('.mp4') ? 
                               <video width="100%" height="auto" autoPlay loop muted playsInline preload="auto" className="border border-medium-gray pb-1">
                                 <source src={data.problemImage[index]} type="video/mp4" />
@@ -127,6 +130,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                               />
                             }
                           </div>
+                          : ''}
                         </div>
                       </section>
                     )
