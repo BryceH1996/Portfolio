@@ -24,14 +24,14 @@ export default function TopCard() {
           <PrimaryButton className="inline-block mt-1" text="View portfolio" url="/portfolio"/>
         </motion.div>
       </div>
-      <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{type: "spring", stiffness: 300, damping: 100}} className="flex flex-col w-full lg:w-6/12 2xl:w-8/12 self-end lg:order-2 order-3 lg:relative absolute bottom-0 z-10">
+      <motion.div initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{type: "spring", stiffness: 300, damping: 100}} className="flex flex-col w-full lg:w-6/12 2xl:w-8/12 self-end items-center lg:order-2 order-3 lg:relative absolute bottom-0 z-10">
         <Image
-            className="relative"
+            className="relative w-11/12 lg:w-full"
             src="/portrait-photo.png"
             alt="Portrait photo"
             width={0}
             height={0}
-            style={{ width: '100%', height: 'auto' }}
+            style={{ height: 'auto' }}
             priority
           />
       </motion.div>
